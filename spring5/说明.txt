@@ -1,0 +1,6 @@
+demo01:基于xml方式
+demo02:IOC操作Bean管理：
+demo03:IOC操作bean管理：基于注解方式
+demo04:AOP
+demo05:数据库
+txdemo06:事务

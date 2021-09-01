@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/util
+                            http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <!-- 1.提取list集合类型属性注入  -->
+    <!-- 使用 util 标签完成 list 集合注入提取 -->
+    <util:list id="bookList">
+        <value>易筋经</value>
+        <value>九阴真经</value>
+        <value>九阳神功</value>
+    </util:list>
+
+    <!-- 2.提取list集合类型属性注  -->
+    <!--    bean 作用域
+    spring文件bean标签里面有属性scope 用于设置单实例还是多实例
+        scope属性值：
+            第一个值：默认值，singleton，表示是单实例对象
+            第二个值：prototype，表示是多实例对象
+     -->
+    <bean id="book" class="com.example.demo02.collectiontype.Book" scope="prototype">
+        <property name="list" ref="bookList"></property>
+    </bean>
+</beans>
